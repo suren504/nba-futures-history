@@ -1,0 +1,37 @@
+name: Archive NBA Futures
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 23 * * *"
+      timezone: "America/New_York"
+
+permissions:
+  contents: write
+
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Fetch NBA futures
+        run: python3 scripts/fetch_futures.py
+
+      - name: Commit snapshot when data changed
+        run: |
+          git add data/
+          if git diff --cached --quiet; then
+            echo "No data changes to commit."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Archive NBA futures snapshot"
+          git push
