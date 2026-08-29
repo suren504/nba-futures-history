@@ -1,7 +1,7 @@
 {
   "season": "2026-27",
   "snapshot_date": "2026-08-29",
-  "snapshot_at": "2026-08-29T08:22:51.533330-04:00",
+  "snapshot_at": "2026-08-29T17:48:12.672479-04:00",
   "timezone": "America/New_York",
   "source": "RotoWire",
   "markets": {
@@ -12,7 +12,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 14,
-      "file": "data\\2026-08-29\\mvp.json",
+      "file": "data/2026-08-29/mvp.json",
       "error": null
     },
     "dpoy": {
@@ -22,7 +22,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 21,
-      "file": "data\\2026-08-29\\dpoy.json",
+      "file": "data/2026-08-29/dpoy.json",
       "error": null
     },
     "roy": {
@@ -32,7 +32,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 36,
-      "file": "data\\2026-08-29\\roy.json",
+      "file": "data/2026-08-29/roy.json",
       "error": null
     },
     "mip": {
@@ -42,7 +42,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 121,
-      "file": "data\\2026-08-29\\mip.json",
+      "file": "data/2026-08-29/mip.json",
       "error": null
     },
     "sixth_man": {
@@ -52,7 +52,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 92,
-      "file": "data\\2026-08-29\\sixth_man.json",
+      "file": "data/2026-08-29/sixth_man.json",
       "error": null
     },
     "coy": {
@@ -62,7 +62,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 30,
-      "file": "data\\2026-08-29\\coy.json",
+      "file": "data/2026-08-29/coy.json",
       "error": null
     },
     "championship": {
@@ -72,7 +72,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 30,
-      "file": "data\\2026-08-29\\championship.json",
+      "file": "data/2026-08-29/championship.json",
       "error": null
     },
     "win_totals": {
@@ -82,7 +82,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 30,
-      "file": "data\\2026-08-29\\win_totals.json",
+      "file": "data/2026-08-29/win_totals.json",
       "error": null
     },
     "atlantic_division": {
@@ -92,7 +92,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 5,
-      "file": "data\\2026-08-29\\atlantic_division.json",
+      "file": "data/2026-08-29/atlantic_division.json",
       "error": null
     },
     "central_division": {
@@ -102,7 +102,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 5,
-      "file": "data\\2026-08-29\\central_division.json",
+      "file": "data/2026-08-29/central_division.json",
       "error": null
     },
     "northwest_division": {
@@ -112,7 +112,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 5,
-      "file": "data\\2026-08-29\\northwest_division.json",
+      "file": "data/2026-08-29/northwest_division.json",
       "error": null
     },
     "southeast_division": {
@@ -122,7 +122,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 5,
-      "file": "data\\2026-08-29\\southeast_division.json",
+      "file": "data/2026-08-29/southeast_division.json",
       "error": null
     },
     "southwest_division": {
@@ -132,7 +132,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 5,
-      "file": "data\\2026-08-29\\southwest_division.json",
+      "file": "data/2026-08-29/southwest_division.json",
       "error": null
     },
     "pacific_division": {
@@ -142,7 +142,7 @@
       "success": true,
       "http_status": 200,
       "row_count": 5,
-      "file": "data\\2026-08-29\\pacific_division.json",
+      "file": "data/2026-08-29/pacific_division.json",
       "error": null
     }
   }
