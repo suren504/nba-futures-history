@@ -1,7 +1,7 @@
 {
   "season": "2026-27",
   "snapshot_date": "2026-09-02",
-  "snapshot_at": "2026-09-02T08:08:54.975603-04:00",
+  "snapshot_at": "2026-09-02T17:52:33.109901-04:00",
   "timezone": "America/New_York",
   "source": "RotoWire",
   "markets": {
@@ -41,7 +41,7 @@
       "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Most%20Improved%20Player",
       "success": true,
       "http_status": 200,
-      "row_count": 121,
+      "row_count": 116,
       "file": "data/2026-09-02/mip.json",
       "error": null
     },
@@ -51,7 +51,7 @@
       "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Sixth%20Man",
       "success": true,
       "http_status": 200,
-      "row_count": 96,
+      "row_count": 95,
       "file": "data/2026-09-02/sixth_man.json",
       "error": null
     },
