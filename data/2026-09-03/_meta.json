@@ -1,0 +1,149 @@
+{
+  "season": "2026-27",
+  "snapshot_date": "2026-09-03",
+  "snapshot_at": "2026-09-03T08:08:31.400900-04:00",
+  "timezone": "America/New_York",
+  "source": "RotoWire",
+  "markets": {
+    "mvp": {
+      "market": "Most Valuable Player",
+      "kind": "player_award",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=MVP",
+      "success": true,
+      "http_status": 200,
+      "row_count": 14,
+      "file": "data/2026-09-03/mvp.json",
+      "error": null
+    },
+    "dpoy": {
+      "market": "Defensive Player of the Year",
+      "kind": "player_award",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Defensive%20Player",
+      "success": true,
+      "http_status": 200,
+      "row_count": 21,
+      "file": "data/2026-09-03/dpoy.json",
+      "error": null
+    },
+    "roy": {
+      "market": "Rookie of the Year",
+      "kind": "player_award",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Rookie",
+      "success": true,
+      "http_status": 200,
+      "row_count": 36,
+      "file": "data/2026-09-03/roy.json",
+      "error": null
+    },
+    "mip": {
+      "market": "Most Improved Player",
+      "kind": "player_award",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Most%20Improved%20Player",
+      "success": true,
+      "http_status": 200,
+      "row_count": 121,
+      "file": "data/2026-09-03/mip.json",
+      "error": null
+    },
+    "sixth_man": {
+      "market": "Sixth Man of the Year",
+      "kind": "player_award",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Sixth%20Man",
+      "success": true,
+      "http_status": 200,
+      "row_count": 96,
+      "file": "data/2026-09-03/sixth_man.json",
+      "error": null
+    },
+    "coy": {
+      "market": "Coach of the Year",
+      "kind": "coach_award",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/coach-futures.php?future=COY",
+      "success": true,
+      "http_status": 200,
+      "row_count": 30,
+      "file": "data/2026-09-03/coy.json",
+      "error": null
+    },
+    "championship": {
+      "market": "NBA Championship",
+      "kind": "team_winner",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/team-futures.php?future=Championship",
+      "success": true,
+      "http_status": 200,
+      "row_count": 30,
+      "file": "data/2026-09-03/championship.json",
+      "error": null
+    },
+    "win_totals": {
+      "market": "NBA Win Totals",
+      "kind": "win_total",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/team-futures.php?future=Win%20Totals",
+      "success": true,
+      "http_status": 200,
+      "row_count": 30,
+      "file": "data/2026-09-03/win_totals.json",
+      "error": null
+    },
+    "atlantic_division": {
+      "market": "Atlantic Division",
+      "kind": "team_winner",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/team-futures.php?future=Atlantic%20Division",
+      "success": true,
+      "http_status": 200,
+      "row_count": 5,
+      "file": "data/2026-09-03/atlantic_division.json",
+      "error": null
+    },
+    "central_division": {
+      "market": "Central Division",
+      "kind": "team_winner",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/team-futures.php?future=Central%20Division",
+      "success": true,
+      "http_status": 200,
+      "row_count": 5,
+      "file": "data/2026-09-03/central_division.json",
+      "error": null
+    },
+    "northwest_division": {
+      "market": "Northwest Division",
+      "kind": "team_winner",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/team-futures.php?future=Northwest%20Division",
+      "success": true,
+      "http_status": 200,
+      "row_count": 5,
+      "file": "data/2026-09-03/northwest_division.json",
+      "error": null
+    },
+    "southeast_division": {
+      "market": "Southeast Division",
+      "kind": "team_winner",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/team-futures.php?future=Southeast%20Division",
+      "success": true,
+      "http_status": 200,
+      "row_count": 5,
+      "file": "data/2026-09-03/southeast_division.json",
+      "error": null
+    },
+    "southwest_division": {
+      "market": "Southwest Division",
+      "kind": "team_winner",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/team-futures.php?future=Southwest%20Division",
+      "success": true,
+      "http_status": 200,
+      "row_count": 5,
+      "file": "data/2026-09-03/southwest_division.json",
+      "error": null
+    },
+    "pacific_division": {
+      "market": "Pacific Division",
+      "kind": "team_winner",
+      "endpoint": "https://www.rotowire.com/betting/nba/tables/team-futures.php?future=Pacific%20Division",
+      "success": true,
+      "http_status": 200,
+      "row_count": 5,
+      "file": "data/2026-09-03/pacific_division.json",
+      "error": null
+    }
+  }
+}
