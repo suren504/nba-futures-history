@@ -23,15 +23,17 @@ jobs:
           python-version: "3.12"
 
       - name: Fetch NBA futures
+        id: fetch
         run: python3 scripts/fetch_futures.py
 
-      - name: Commit snapshot when raw odds changed
+      - name: Commit available snapshots and freshness metadata
+        # Preserve any validated snapshots even if a later step in the script fails.
+        if: ${{ !cancelled() && (steps.fetch.outcome == 'success' || steps.fetch.outcome == 'failure') }}
         run: |
           git add data/
 
-          if ! git diff --cached --name-only -- data/ | grep -qv '/_meta.json$'; then
-            echo "Raw odds did not change. Discarding metadata-only changes."
-            git restore --staged --worktree -- data/
+          if git diff --cached --quiet -- data/; then
+            echo "No snapshot changes to commit."
             exit 0
           fi
 

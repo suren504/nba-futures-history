@@ -36,7 +36,6 @@ MARKETS: dict[str, dict[str, Any]] = {
         "future": "MVP",
         "filename": "mvp.json",
         "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=MVP",
-        "critical": True,
     },
     "dpoy": {
         "display_name": "Defensive Player of the Year",
@@ -494,9 +493,44 @@ def print_summary(metadata: dict[str, Any]) -> None:
     print("\nMarket                         Status  Rows", flush=True)
     print("-" * 48, flush=True)
     for result in metadata["markets"].values():
-        status = "OK" if result["success"] else "FAILED"
+        status = "OK" if result["success"] else ("STALE" if result["stale"] else "MISSING")
         row_count = result["row_count"] if result["row_count"] is not None else "-"
         print(f"{result['market']:<30} {status:<7} {row_count}", flush=True)
+
+
+def restore_latest_snapshot(
+    repository_root: Path, snapshot_dir: Path, slug: str,
+    market: dict[str, Any], result: dict[str, Any],
+) -> None:
+    """Carry forward validated same-season data without resetting its source date."""
+    data_dir = repository_root / "data"
+    candidates = sorted(data_dir.iterdir(), reverse=True) if data_dir.exists() else []
+    for candidate in candidates:
+        if not candidate.is_dir() or candidate.name > snapshot_dir.name:
+            continue
+        try:
+            datetime.strptime(candidate.name, "%Y-%m-%d")
+            metadata = json.loads((candidate / "_meta.json").read_bytes())
+            if metadata.get("season") != SEASON:
+                continue
+            previous = metadata["markets"][slug]
+            # Legacy snapshots have no source_date; only trust successful fetches.
+            source_date = previous.get("source_date")
+            if not source_date:
+                if not previous.get("success"):
+                    continue
+                source_date = candidate.name
+            raw_body = (candidate / market["filename"]).read_bytes()
+            row_count = validate_market(market, json.loads(raw_body))
+        except (OSError, ValueError, KeyError, TypeError):
+            continue
+        output_path = save_snapshot(snapshot_dir, market["filename"], raw_body)
+        result.update(
+            stale=True, source_date=source_date, row_count=row_count,
+            file=str(output_path.relative_to(repository_root)),
+        )
+        print(f"Carried forward {slug}: source date {source_date}", flush=True)
+        return
 
 
 def main() -> int:
@@ -515,7 +549,7 @@ def main() -> int:
     }
 
     successful_markets = 0
-    critical_failures: list[str] = []
+    empty_markets = 0
 
     market_items = list(MARKETS.items())
     for index, (slug, market) in enumerate(market_items):
@@ -528,6 +562,8 @@ def main() -> int:
             "row_count": None,
             "file": None,
             "error": None,
+            "stale": False,
+            "source_date": None,
         }
         metadata["markets"][slug] = result
 
@@ -536,6 +572,11 @@ def main() -> int:
             rows, raw_body, http_status = fetch_json(market["endpoint"])
             result["http_status"] = http_status
             result["row_count"] = len(rows)
+            if not rows:
+                empty_markets += 1
+                result["error"] = "No odds currently available (empty array)"
+                print(f"UNAVAILABLE {slug}: {result['error']}", flush=True)
+                continue
             row_count = validate_market(market, rows)
             output_path = save_snapshot(snapshot_dir, market["filename"], raw_body)
             result.update(
@@ -543,6 +584,7 @@ def main() -> int:
                     "success": True,
                     "row_count": row_count,
                     "file": str(output_path.relative_to(repository_root)),
+                    "source_date": snapshot_date,
                 }
             )
             successful_markets += 1
@@ -550,32 +592,31 @@ def main() -> int:
         except FetchError as exc:
             result["http_status"] = exc.http_status
             result["error"] = str(exc)
-            if market.get("critical"):
-                critical_failures.append(slug)
             print(f"FAILED {slug}: {exc}", file=sys.stderr, flush=True)
         except (OSError, ValueError) as exc:
             result["error"] = str(exc)
-            if market.get("critical"):
-                critical_failures.append(slug)
             print(f"FAILED {slug}: {exc}", file=sys.stderr, flush=True)
         finally:
             if index < len(market_items) - 1:
                 time.sleep(REQUEST_DELAY_SECONDS)
 
+    if successful_markets == 0:
+        print_summary(metadata)
+        if empty_markets == len(MARKETS):
+            print("No odds available; leaving existing snapshots unchanged.", flush=True)
+            return 0
+        print("No valid markets fetched; leaving snapshots unchanged.", file=sys.stderr)
+        return 1
+
+    for slug, market in market_items:
+        result = metadata["markets"][slug]
+        if not result["success"]:
+            restore_latest_snapshot(repository_root, snapshot_dir, slug, market, result)
+
     metadata_path = save_metadata(snapshot_dir, metadata)
     print(f"Saved metadata -> {metadata_path}", flush=True)
     print_summary(metadata)
 
-    if successful_markets == 0:
-        print("All markets failed; exiting with status 1.", file=sys.stderr)
-        return 1
-    if critical_failures:
-        print(
-            f"Critical markets failed: {', '.join(critical_failures)}; "
-            "exiting with status 1.",
-            file=sys.stderr,
-        )
-        return 1
     return 0
 
 
