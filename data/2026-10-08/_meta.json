@@ -1,7 +1,7 @@
 {
   "season": "2026-27",
   "snapshot_date": "2026-10-08",
-  "snapshot_at": "2026-10-08T10:38:47.159413-04:00",
+  "snapshot_at": "2026-10-08T19:46:31.414867-04:00",
   "timezone": "America/New_York",
   "source": "RotoWire",
   "markets": {
@@ -35,7 +35,7 @@
       "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Rookie",
       "success": true,
       "http_status": 200,
-      "row_count": 28,
+      "row_count": 7,
       "file": "data/2026-10-08/roy.json",
       "error": null,
       "stale": false,
@@ -59,7 +59,7 @@
       "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Sixth%20Man",
       "success": true,
       "http_status": 200,
-      "row_count": 90,
+      "row_count": 39,
       "file": "data/2026-10-08/sixth_man.json",
       "error": null,
       "stale": false,
