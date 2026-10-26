@@ -1,7 +1,7 @@
 {
   "season": "2026-27",
   "snapshot_date": "2026-10-26",
-  "snapshot_at": "2026-10-26T10:22:21.442547-04:00",
+  "snapshot_at": "2026-10-26T19:09:58.568654-04:00",
   "timezone": "America/New_York",
   "source": "RotoWire",
   "markets": {
@@ -95,7 +95,7 @@
       "endpoint": "https://www.rotowire.com/betting/nba/tables/team-futures.php?future=Win%20Totals",
       "success": true,
       "http_status": 200,
-      "row_count": 30,
+      "row_count": 29,
       "file": "data/2026-10-26/win_totals.json",
       "error": null,
       "stale": false,
