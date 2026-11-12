@@ -1,7 +1,7 @@
 {
   "season": "2026-27",
   "snapshot_date": "2026-11-11",
-  "snapshot_at": "2026-11-11T11:17:57.853601-05:00",
+  "snapshot_at": "2026-11-11T20:55:39.585817-05:00",
   "timezone": "America/New_York",
   "source": "RotoWire",
   "markets": {
@@ -47,7 +47,7 @@
       "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Most%20Improved%20Player",
       "success": true,
       "http_status": 200,
-      "row_count": 97,
+      "row_count": 95,
       "file": "data/2026-11-11/mip.json",
       "error": null,
       "stale": false,
@@ -59,7 +59,7 @@
       "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Sixth%20Man",
       "success": true,
       "http_status": 200,
-      "row_count": 98,
+      "row_count": 95,
       "file": "data/2026-11-11/sixth_man.json",
       "error": null,
       "stale": false,
@@ -93,12 +93,12 @@
       "market": "NBA Win Totals",
       "kind": "win_total",
       "endpoint": "https://www.rotowire.com/betting/nba/tables/team-futures.php?future=Win%20Totals",
-      "success": true,
+      "success": false,
       "http_status": 200,
       "row_count": 30,
       "file": "data/2026-11-11/win_totals.json",
-      "error": null,
-      "stale": false,
+      "error": "Row count is suspiciously low: 16; expected at least 20",
+      "stale": true,
       "source_date": "2026-11-11"
     },
     "atlantic_division": {
