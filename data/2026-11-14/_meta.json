@@ -1,7 +1,7 @@
 {
   "season": "2026-27",
   "snapshot_date": "2026-11-14",
-  "snapshot_at": "2026-11-14T10:10:21.085898-05:00",
+  "snapshot_at": "2026-11-14T18:57:59.449410-05:00",
   "timezone": "America/New_York",
   "source": "RotoWire",
   "markets": {
@@ -59,7 +59,7 @@
       "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Sixth%20Man",
       "success": true,
       "http_status": 200,
-      "row_count": 100,
+      "row_count": 90,
       "file": "data/2026-11-14/sixth_man.json",
       "error": null,
       "stale": false,
