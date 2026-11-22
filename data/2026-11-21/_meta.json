@@ -1,7 +1,7 @@
 {
   "season": "2026-27",
   "snapshot_date": "2026-11-21",
-  "snapshot_at": "2026-11-21T11:13:01.055924-05:00",
+  "snapshot_at": "2026-11-21T19:25:04.725057-05:00",
   "timezone": "America/New_York",
   "source": "RotoWire",
   "markets": {
@@ -47,7 +47,7 @@
       "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Most%20Improved%20Player",
       "success": true,
       "http_status": 200,
-      "row_count": 96,
+      "row_count": 93,
       "file": "data/2026-11-21/mip.json",
       "error": null,
       "stale": false,
@@ -59,7 +59,7 @@
       "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Sixth%20Man",
       "success": true,
       "http_status": 200,
-      "row_count": 101,
+      "row_count": 97,
       "file": "data/2026-11-21/sixth_man.json",
       "error": null,
       "stale": false,
@@ -93,12 +93,12 @@
       "market": "NBA Win Totals",
       "kind": "win_total",
       "endpoint": "https://www.rotowire.com/betting/nba/tables/team-futures.php?future=Win%20Totals",
-      "success": true,
+      "success": false,
       "http_status": 200,
       "row_count": 30,
       "file": "data/2026-11-21/win_totals.json",
-      "error": null,
-      "stale": false,
+      "error": "No sportsbook supplied a complete reasonable line/over/under set for: PHI",
+      "stale": true,
       "source_date": "2026-11-21"
     },
     "atlantic_division": {
