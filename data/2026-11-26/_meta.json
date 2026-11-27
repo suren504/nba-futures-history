@@ -1,7 +1,7 @@
 {
   "season": "2026-27",
   "snapshot_date": "2026-11-26",
-  "snapshot_at": "2026-11-26T13:28:45.544684-05:00",
+  "snapshot_at": "2026-11-26T21:55:22.632887-05:00",
   "timezone": "America/New_York",
   "source": "RotoWire",
   "markets": {
@@ -35,7 +35,7 @@
       "endpoint": "https://www.rotowire.com/betting/nba/tables/player-futures.php?future=Rookie",
       "success": true,
       "http_status": 200,
-      "row_count": 28,
+      "row_count": 29,
       "file": "data/2026-11-26/roy.json",
       "error": null,
       "stale": false,
